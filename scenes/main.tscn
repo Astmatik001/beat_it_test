@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlcn4tlo25n1t"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_51h1s"]
+[ext_resource type="PackedScene" uid="uid://c7m2acex8wk1d" path="res://scenes/playbacker.tscn" id="2_8wqu7"]
+[ext_resource type="PackedScene" uid="uid://n4b6ocgyjs4p" path="res://scenes/multi_score_display.tscn" id="2_pddw1"]
+[ext_resource type="Script" path="res://scripts/button_dispencer.gd" id="4_usfyp"]
+[ext_resource type="Script" path="res://scripts/movement_and_snapping.gd" id="4_vuab8"]
+[ext_resource type="Script" path="res://scripts/space_dispencer.gd" id="6_4nftw"]
+
+[node name="Node2D" type="Node2D"]
+light_mask = 7
+script = ExtResource("1_51h1s")
+
+[node name="MultiScoreDisplay" parent="." instance=ExtResource("2_pddw1")]
+position = Vector2(200, 200)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="play_button" type="Button" parent="."]
+offset_left = -550.0
+offset_top = 220.0
+offset_right = -481.0
+offset_bottom = 289.0
+text = "play"
+
+[node name="Playbacker" parent="." instance=ExtResource("2_8wqu7")]
+position = Vector2(-450, -160)
+scale = Vector2(0.1, 2)
+
+[node name="reroll_button" type="Button" parent="."]
+offset_left = -450.0
+offset_top = 220.0
+offset_right = -381.0
+offset_bottom = 289.0
+text = "rerol"
+
+[node name="movement_and_snapping" type="Node" parent="."]
+script = ExtResource("4_vuab8")
+
+[node name="space_dispencer" type="Node" parent="movement_and_snapping"]
+script = ExtResource("6_4nftw")
+
+[node name="button_dispencer" type="Node" parent="movement_and_snapping"]
+script = ExtResource("4_usfyp")
+
+[connection signal="button_down" from="play_button" to="." method="_on_play_button_button_down"]
+[connection signal="button_down" from="reroll_button" to="." method="_on_reroll_button_button_down"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://6mwlhg4rvdwq"]
+
+[ext_resource type="Script" path="res://scripts/score_display.gd" id="1_d70aj"]
+
+[node name="score_display" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_d70aj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 250.0
+offset_bottom = 250.0
+scroll_active = false

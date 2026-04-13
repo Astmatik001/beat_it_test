@@ -1,0 +1,50 @@
+TODAY: 
+
+
+DONE:
+	modifiers connecting to sound tiles are now actually moving inside the tree and changing parents
+	
+	make button dispencer a scene, child of main, parent of generated tiles
+		maybe tiles leave it completely when moving to the board
+		and then you can only refresh children on refresh
+	
+	removed get_path() mess 
+
+TODO:
+	
+	sound interface sound_object
+		its kinda doing nothing
+		maybe i should make inheritance, not interface
+		movement -> sound -> b, t, pf, modif
+		depends on how modifiers wor
+		
+	Make modifiers do something
+	
+	proper menu/level/stuff classes
+	
+	Make a final score screen
+	
+	record diff sound versions
+	
+	add diff sounds to sound tiles
+	
+	
+	record modifier sfx
+
+modifier tiles
+	should inherit the same movement of sound tiles
+		so probably need to create intermideate class movement_tile
+		tile -> movement_tile -> sound_tile
+							-> modifier_tile
+
+	did i already move counting scores into the same spot that triggers sound of a tile on playback? idk
+		on the other hand, should modifier tiles get sound triggered?
+
+	POSSIBLY tile -> sound_tile -> modifier_tile, modifier tile gets some pop as a sound???????
+
+	probably still get a movement tile out there, so:
+		tile -> movement_tile -> sound tile -> modifier tile
+		
+
+	OR modifiers are just sound tiles of a diff type? 
+		but then it's unclear how are they displayed not overlapping sound tiles

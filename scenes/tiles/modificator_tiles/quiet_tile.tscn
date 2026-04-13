@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://hxgodiiefnay"]
+
+[ext_resource type="Script" path="res://scripts/tiles/modificator_tiles/quiet_tile.gd" id="1_7m1ub"]
+[ext_resource type="Script" path="res://scripts/sound_object.gd" id="2_f24pk"]
+[ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="3_3pf5w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u4i4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8lk3"]
+atlas = ExtResource("3_3pf5w")
+region = Rect2(176, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l5hck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8lk3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="QuietTile" type="Area2D"]
+script = ExtResource("1_7m1ub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_3u4i4")
+
+[node name="sound_object" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("2_f24pk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_l5hck")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

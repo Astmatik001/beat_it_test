@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmsxf6rdaiqnm"]
+
+[ext_resource type="Script" path="res://scripts/sound_tile.gd" id="1_1qejx"]
+[ext_resource type="PackedScene" uid="uid://6ym4u2svy361" path="res://scenes/tiles/tile.tscn" id="1_bqpp0"]
+[ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="2_6g4qx"]
+[ext_resource type="Script" path="res://scripts/sound_obj.gd" id="5_2nnod"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf33r"]
+atlas = ExtResource("2_6g4qx")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve7wb"]
+atlas = ExtResource("2_6g4qx")
+region = Rect2(112, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7nlo"]
+atlas = ExtResource("2_6g4qx")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fva5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf33r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve7wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7nlo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="sound_tile" type="Node2D"]
+z_index = 5
+script = ExtResource("1_1qejx")
+
+[node name="tile" parent="." instance=ExtResource("1_bqpp0")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_fva5o")
+
+[node name="sound_object" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("5_2nnod")
+
+[connection signal="give_yo_type" from="tile" to="." method="_on_tile_give_yo_type"]
+[connection signal="i_have_been_clicked" from="tile" to="." method="_on_tile_i_have_been_clicked"]
+[connection signal="something_is_in_me" from="tile" to="." method="_on_tile_something_is_in_me"]

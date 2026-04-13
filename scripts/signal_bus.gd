@@ -1,0 +1,28 @@
+extends Node
+
+var playbacking: bool 
+func toggle_playbacking():
+	playbacking = not playbacking
+	
+
+func _ready() -> void:
+	playbacking = false
+func _process(_delta: float) -> void:
+	pass
+
+
+@warning_ignore("unused_signal")
+signal mouse_button_clicked(object: Node2D)
+@warning_ignore("unused_signal")
+signal new_destination(where: Node2D)
+@warning_ignore("unused_signal")
+
+@warning_ignore("unused_signal")
+signal thing_entered_playbacker(thing: Node2D, pos: int)
+@warning_ignore("unused_signal")
+signal created_scene(tiles: int, spaces: int)
+@warning_ignore("unused_signal")
+signal score_update(new_score_beat: int, new_score_engine: int, new_score_constant: int)
+
+@warning_ignore("unused_signal")
+signal bring_it_back(who: movement_tile)

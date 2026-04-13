@@ -1,0 +1,26 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="beat_it_test"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SignalBus="*res://scripts/signal_bus.gd"
+Score="*res://scripts/score.gd"
+GlobalVariables="*res://scripts/global_variables.gd"
+
+[dotnet]
+
+project/assembly_name="beat_it_test"

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://n4b6ocgyjs4p"]
+
+[ext_resource type="Script" path="res://scripts/multi_score_display.gd" id="1_cix5k"]
+[ext_resource type="PackedScene" uid="uid://6mwlhg4rvdwq" path="res://scenes/score_display.tscn" id="1_tcmde"]
+
+[node name="MultiScoreDisplay" type="Node2D"]
+script = ExtResource("1_cix5k")
+
+[node name="beat_display" parent="." instance=ExtResource("1_tcmde")]
+
+[node name="engine_display" parent="." instance=ExtResource("1_tcmde")]
+position = Vector2(100, 0)
+
+[node name="constant_display" parent="." instance=ExtResource("1_tcmde")]
+position = Vector2(200, 0)
