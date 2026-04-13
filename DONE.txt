@@ -40,6 +40,7 @@
 	removed get_path() mess 
 	
 13.04.26
+	made the github repo
 	update godot version
 	refactor to abstract classes and functions
 	made modifiers modify sound object directly

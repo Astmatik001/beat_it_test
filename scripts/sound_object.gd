@@ -3,10 +3,6 @@ extends AudioStreamPlayer2D
 
 
 var muted: bool
-var loud: bool
-var quiet: bool
-var long: bool
-var short: bool
 
 
 func set_sound(sound: AudioStream) -> void:
@@ -17,10 +13,6 @@ func change_scale(value: float) -> void:
 	pitch_scale *= value
 	
 func reset() -> void:
-	loud = false
-	quiet = false
-	long = false
-	short = false
 	volume_db = 0
 	pitch_scale = 1
 
