@@ -28,7 +28,7 @@ func _input(event: InputEvent):
 						follower.position = Vector2(0,0)
 				elif follower is modificator_tile:
 					if destination.is_getting_followed():
-						var followers = destination.get_follower().get_followers()
+						var followers = destination.get_follower().get_follower_types()
 						if follower.get_tile_subtype() in followers:
 							follower.reset_position()
 						else:

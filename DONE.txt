@@ -33,3 +33,14 @@
 	
 21.09
 	simple modifiers as bool properties inside sound_object
+	
+??.??
+	modifiers connecting to sound tiles are now actually moving inside the tree and changing parents
+	made button dispencer a scene, child of main, parent of generated tiles
+	removed get_path() mess 
+	
+13.04.26
+	update godot version
+	refactor to abstract classes and functions
+	made modifiers modify sound object directly
+	

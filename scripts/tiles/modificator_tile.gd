@@ -3,10 +3,10 @@ extends movement_tile
 
 
 
-func play_my_sound() -> void:
-	$sound_object.play_my_sound()
+#func play_my_sound() -> void:
+	#$sound_object.play_my_sound()
 
 func get_tile_type() -> String:
 	return "modificator_tile"
 
-#func modify_sound() -> AudioStrream
+@abstract func modify_sound(soubd_object) -> void

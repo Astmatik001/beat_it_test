@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c25rngq0tqhvn"]
+[gd_scene format=3 uid="uid://c25rngq0tqhvn"]
 
-[ext_resource type="Script" path="res://scripts/tiles/modificator_tiles/long_tile.gd" id="1_km1ha"]
-[ext_resource type="Script" path="res://scripts/sound_object.gd" id="2_8qbo4"]
+[ext_resource type="Script" uid="uid://dju1uevwm8awa" path="res://scripts/tiles/modificator_tiles/long_tile.gd" id="1_km1ha"]
 [ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="3_62u1h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1eckx"]
@@ -21,17 +20,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="LongTile" type="Area2D"]
+[node name="LongTile" type="Area2D" unique_id=1017660277]
 script = ExtResource("1_km1ha")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=491348556]
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_1eckx")
 
-[node name="sound_object" type="AudioStreamPlayer2D" parent="."]
-script = ExtResource("2_8qbo4")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=835428939]
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_gk884")
