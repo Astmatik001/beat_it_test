@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ccj2n83jpydrd"]
 
 [ext_resource type="Script" uid="uid://57mx83ad2xbu" path="res://scripts/tiles/modificator_tiles/impact_tile.gd" id="1_a2a7x"]
+[ext_resource type="Script" uid="uid://di4blv1blky88" path="res://scripts/sound_object.gd" id="2_6t4vx"]
 [ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="3_cvh7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofx2m"]
@@ -25,6 +26,9 @@ script = ExtResource("1_a2a7x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=456465540]
 shape = SubResource("RectangleShape2D_ofx2m")
+
+[node name="sound_object" type="AudioStreamPlayer2D" parent="." unique_id=1645552000]
+script = ExtResource("2_6t4vx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1628151818]
 texture_filter = 1

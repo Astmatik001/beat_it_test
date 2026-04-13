@@ -31,6 +31,7 @@ func reset_position() -> void:
 func get_tile_type() -> String:
 	return "movement_tile"
 
+@warning_ignore("unused_signal")
 signal release_me()
 
 func play_my_sound():

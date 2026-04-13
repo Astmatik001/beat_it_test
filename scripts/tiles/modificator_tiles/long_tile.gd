@@ -6,4 +6,4 @@ func get_tile_subtype() -> String:
 	return("long")
 	
 func modify_sound(o) -> void:
-	o.change_scale(3)
+	o.change_scale(0.25)

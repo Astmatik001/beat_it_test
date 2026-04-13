@@ -43,4 +43,5 @@
 	update godot version
 	refactor to abstract classes and functions
 	made modifiers modify sound object directly
+	ignored some warnings
 	

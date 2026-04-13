@@ -13,6 +13,7 @@ func _process(_delta: float) -> void:
 
 func _on_thing_entered_playbacker(thing: Node2D, pos: int):
 	var space_id: int
+	@warning_ignore("integer_division")
 	space_id = (pos + 450)/50
 	match thing.get_tile_subtype():
 		"kick":

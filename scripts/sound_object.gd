@@ -13,7 +13,7 @@ func set_sound(sound: AudioStream) -> void:
 	stream = sound
 func change_volume(value: int) -> void:
 	volume_db += value
-func change_scale(value: int) -> void:
+func change_scale(value: float) -> void:
 	pitch_scale *= value
 	
 func reset() -> void:
