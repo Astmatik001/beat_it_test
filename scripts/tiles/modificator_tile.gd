@@ -8,3 +8,5 @@ func play_my_sound() -> void:
 
 func get_tile_type() -> String:
 	return "modificator_tile"
+
+#func modify_sound() -> AudioStrream
