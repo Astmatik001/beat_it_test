@@ -1,4 +1,4 @@
-class_name modificator_tile
+@abstract class_name modificator_tile
 extends movement_tile
 
 

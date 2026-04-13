@@ -1,21 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://lwoqde7oagdu"]
+[gd_scene format=3 uid="uid://lwoqde7oagdu"]
 
-[ext_resource type="Script" path="res://scripts/tiles/sound_tile.gd" id="1_1qejx"]
-[ext_resource type="Script" path="res://scripts/controller_container.gd" id="3_6wmme"]
-[ext_resource type="Script" path="res://scripts/sound_object.gd" id="5_2nnod"]
+[ext_resource type="Script" uid="uid://e3u7wwrup4j" path="res://scripts/tiles/sound_tile.gd" id="1_1qejx"]
+[ext_resource type="Script" uid="uid://bb4eli7gs0xij" path="res://scripts/controller_container.gd" id="3_6wmme"]
+[ext_resource type="Script" uid="uid://di4blv1blky88" path="res://scripts/sound_object.gd" id="5_2nnod"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khd01"]
 
-[node name="SoundTile" type="Area2D"]
+[node name="SoundTile" type="Area2D" unique_id=1465673261]
 script = ExtResource("1_1qejx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=880383744]
 shape = SubResource("RectangleShape2D_khd01")
 
-[node name="sound_object" type="AudioStreamPlayer2D" parent="."]
+[node name="sound_object" type="AudioStreamPlayer2D" parent="." unique_id=946522919]
 script = ExtResource("5_2nnod")
 
-[node name="controller_container" type="VBoxContainer" parent="."]
+[node name="controller_container" type="VBoxContainer" parent="." unique_id=285651231]
 offset_right = 20.0
 script = ExtResource("3_6wmme")
 

@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://6ym4u2svy361"]
+[gd_scene format=3 uid="uid://6ym4u2svy361"]
 
-[ext_resource type="Script" path="res://scripts/tiles/tile.gd" id="1_owpmd"]
+[ext_resource type="Script" uid="uid://dcke31ews7bo5" path="res://scripts/tiles/tile.gd" id="1_owpmd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hdk5"]
 size = Vector2(16, 16)
 
-[node name="tile" type="Area2D"]
+[node name="tile" type="Area2D" unique_id=26930448]
 script = ExtResource("1_owpmd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2125185609]
 shape = SubResource("RectangleShape2D_0hdk5")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

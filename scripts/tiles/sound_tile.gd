@@ -1,12 +1,7 @@
+@abstract class_name sound_tile
 extends movement_tile
-class_name sound_tile
 
 
-func _ready() -> void:
-	pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if follow_mouse: position = get_global_mouse_position()
 
 func play_my_sound() -> void:
 	var folowers = get_followers()

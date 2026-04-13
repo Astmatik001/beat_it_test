@@ -1,4 +1,4 @@
-class_name movement_tile
+@abstract class_name movement_tile
 extends tile
 
 var follow_mouse: bool
@@ -6,6 +6,9 @@ var default_position: Vector2
 
 func _init():
 	follow_mouse = false
+
+func _process(_delta: float) -> void:
+	if follow_mouse: position = get_global_mouse_position()
 
 func toggle_follow_mouse():
 	follow_mouse = not follow_mouse

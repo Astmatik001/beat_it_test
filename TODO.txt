@@ -1,5 +1,7 @@
 TODAY: 
-
+	update version
+	refactor to abstract classes and functions
+	make modifiers modify function that processes audio stream
 
 DONE:
 	modifiers connecting to sound tiles are now actually moving inside the tree and changing parents
