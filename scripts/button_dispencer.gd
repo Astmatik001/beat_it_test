@@ -37,9 +37,9 @@ func reroll_tiles():
 		new_tile.reset_position()
 		_tile.queue_free()
 
-func move_child_tile(modificator: modificator_tile, sound: sound_tile):
+func move_child_tile(modificator: modificator_tile, sound: sound_tile, order: int):
 	remove_child(modificator)
-	sound.add_modificator_child(modificator)
+	sound.add_modificator_child(modificator, order)
 	
 func _on_bring_it_back(who: movement_tile):
 	add_child(who)

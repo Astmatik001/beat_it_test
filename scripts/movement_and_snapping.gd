@@ -13,8 +13,8 @@ func _on_mouse_button_clicked(thing: Node2D) -> void:
 func _on_new_destination(place: Area2D) -> void:
 	destination = place
 
-func toggle_modificator_follow_on(modificator: modificator_tile, sound: sound_tile):
-	$button_dispencer.move_child_tile(modificator, sound)
+func toggle_modificator_follow_on(modificator: modificator_tile, sound: sound_tile, order: int):
+	$button_dispencer.move_child_tile(modificator, sound, order)
 	
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and not event.pressed and event.button_index == 1:
@@ -28,11 +28,14 @@ func _input(event: InputEvent):
 						follower.position = Vector2(0,0)
 				elif follower is modificator_tile:
 					if destination.is_getting_followed():
-						var followers = destination.get_follower().get_follower_types()
-						if follower.get_tile_subtype() in followers:
-							follower.reset_position()
-						else:
-							toggle_modificator_follow_on(follower, destination.get_sound_tile())
+						#var followers = destination.get_follower().get_follower_types()
+						#if follower.get_tile_subtype() in followers:
+							#follower.reset_position()
+						#else:
+						
+						var order = destination.get_mouse_position()
+						print(order)
+						toggle_modificator_follow_on(follower, destination.get_sound_tile(), order)
 					else:
 						follower.reset_position()
 			else:

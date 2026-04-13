@@ -4,13 +4,6 @@ DONE:
 
 TODO:
 	
-	sound interface sound_object
-		its kinda doing nothing
-		maybe i should make inheritance, not interface
-		movement -> sound -> b, t, pf, modif
-		depends on how modifiers wor
-		
-	Make modifiers do something
 	
 	proper menu/level/stuff classes
 	

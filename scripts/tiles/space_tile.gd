@@ -36,3 +36,9 @@ func is_getting_followed() -> bool:
 
 func get_follower() -> sound_tile:
 	return get_child(2)
+
+func get_mouse_position() -> int:
+	var local_pos = get_local_mouse_position()
+	if local_pos.y > -32:
+		return -1
+	return local_pos.y/32 - 1

@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://2vunymsk75ui"]
+[gd_scene format=3 uid="uid://2vunymsk75ui"]
 
-[ext_resource type="Script" path="res://scripts/tiles/space_tile.gd" id="1_yyonv"]
+[ext_resource type="Script" uid="uid://i1aimmuaw2es" path="res://scripts/tiles/space_tile.gd" id="1_yyonv"]
 [ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="2_q4exi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc10p"]
@@ -21,15 +21,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SpaceTile" type="Area2D"]
+[node name="SpaceTile" type="Area2D" unique_id=1720477361]
 script = ExtResource("1_yyonv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=500867245]
 position = Vector2(0, -60)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jc10p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1626355387]
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_oktly")
