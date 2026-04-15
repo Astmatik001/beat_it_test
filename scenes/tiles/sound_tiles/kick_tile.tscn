@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2wdaktjt3frj"]
+[gd_scene format=3 uid="uid://c2wdaktjt3frj"]
 
-[ext_resource type="Script" path="res://scripts/tiles/sound_tiles/kick_tile.gd" id="1_sgh1d"]
-[ext_resource type="Script" path="res://scripts/sound_object.gd" id="2_811vs"]
+[ext_resource type="Script" uid="uid://cxsirp7ku0iyl" path="res://scripts/tiles/sound_tiles/kick_tile.gd" id="1_sgh1d"]
+[ext_resource type="Script" uid="uid://di4blv1blky88" path="res://scripts/tiles/sound_object.gd" id="2_811vs"]
 [ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="3_2mg1y"]
-[ext_resource type="Script" path="res://scripts/controller_container.gd" id="4_e8yge"]
+[ext_resource type="Script" uid="uid://bb4eli7gs0xij" path="res://scripts/level_assets/controller_container.gd" id="4_e8yge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7h53"]
 

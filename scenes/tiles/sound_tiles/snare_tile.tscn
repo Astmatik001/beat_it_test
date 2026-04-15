@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cmt50hgpw33an"]
 
 [ext_resource type="Script" uid="uid://cv7ifnv3xt7tm" path="res://scripts/tiles/sound_tiles/snare_tile.gd" id="1_uvpa8"]
-[ext_resource type="Script" uid="uid://di4blv1blky88" path="res://scripts/sound_object.gd" id="2_iufiy"]
+[ext_resource type="Script" uid="uid://di4blv1blky88" path="res://scripts/tiles/sound_object.gd" id="2_iufiy"]
 [ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="3_h1otr"]
-[ext_resource type="Script" uid="uid://bb4eli7gs0xij" path="res://scripts/controller_container.gd" id="4_glomy"]
+[ext_resource type="Script" uid="uid://bb4eli7gs0xij" path="res://scripts/level_assets/controller_container.gd" id="4_glomy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbdml"]
 

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://6mwlhg4rvdwq"]
+[gd_scene format=3 uid="uid://6mwlhg4rvdwq"]
 
-[ext_resource type="Script" path="res://scripts/score_display.gd" id="1_d70aj"]
+[ext_resource type="Script" uid="uid://bg0q6mjsty1xh" path="res://scripts/level_assets/score_display.gd" id="1_d70aj"]
 
 [node name="score_display" type="Node2D"]
 texture_filter = 1

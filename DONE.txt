@@ -45,4 +45,4 @@
 	refactor to abstract classes and functions
 	made modifiers modify sound object directly
 	ignored some warnings
-	
+	changing modifier positions

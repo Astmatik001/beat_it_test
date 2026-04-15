@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://d31m5d6ly7soe"]
+[gd_scene format=3 uid="uid://d31m5d6ly7soe"]
 
-[ext_resource type="Script" path="res://scripts/tiles/sound_tiles/hi_hat_tile.gd" id="1_musjt"]
+[ext_resource type="Script" uid="uid://cls4siepxr2xo" path="res://scripts/tiles/sound_tiles/hi_hat_tile.gd" id="1_musjt"]
 [ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="2_pki5q"]
-[ext_resource type="Script" path="res://scripts/sound_object.gd" id="3_cut5r"]
-[ext_resource type="Script" path="res://scripts/controller_container.gd" id="4_sxnno"]
+[ext_resource type="Script" uid="uid://di4blv1blky88" path="res://scripts/tiles/sound_object.gd" id="3_cut5r"]
+[ext_resource type="Script" uid="uid://bb4eli7gs0xij" path="res://scripts/level_assets/controller_container.gd" id="4_sxnno"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyusa"]
 atlas = ExtResource("2_pki5q")

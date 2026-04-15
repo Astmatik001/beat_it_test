@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7m2acex8wk1d"]
+[gd_scene format=3 uid="uid://c7m2acex8wk1d"]
 
-[ext_resource type="Script" path="res://scripts/playbacker.gd" id="1_duawh"]
+[ext_resource type="Script" uid="uid://bppvqjapnb6q0" path="res://scripts/level_assets/playbacker.gd" id="1_duawh"]
 [ext_resource type="Texture2D" uid="uid://cgqtsb6tonuvo" path="res://assets/Dababy_car_.webp" id="2_e7vyy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofb3o"]

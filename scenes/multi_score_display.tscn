@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://n4b6ocgyjs4p"]
+[gd_scene format=3 uid="uid://n4b6ocgyjs4p"]
 
-[ext_resource type="Script" path="res://scripts/multi_score_display.gd" id="1_cix5k"]
+[ext_resource type="Script" uid="uid://cgbexl7etimdv" path="res://scripts/level_assets/multi_score_display.gd" id="1_cix5k"]
 [ext_resource type="PackedScene" uid="uid://6mwlhg4rvdwq" path="res://scenes/score_display.tscn" id="1_tcmde"]
 
-[node name="MultiScoreDisplay" type="Node2D"]
+[node name="MultiScoreDisplay" type="Node2D" unique_id=266486816]
 script = ExtResource("1_cix5k")
 
-[node name="beat_display" parent="." instance=ExtResource("1_tcmde")]
+[node name="beat_display" parent="." unique_id=1520974402 instance=ExtResource("1_tcmde")]
 
-[node name="engine_display" parent="." instance=ExtResource("1_tcmde")]
+[node name="engine_display" parent="." unique_id=1765029609 instance=ExtResource("1_tcmde")]
 position = Vector2(100, 0)
 
-[node name="constant_display" parent="." instance=ExtResource("1_tcmde")]
+[node name="constant_display" parent="." unique_id=1121391414 instance=ExtResource("1_tcmde")]
 position = Vector2(200, 0)
