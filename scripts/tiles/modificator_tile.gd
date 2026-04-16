@@ -4,4 +4,5 @@ extends movement_tile
 
 @abstract func modify_sound(soubd_object) -> void
 
-#@abstract func modify_score() -> void
+func modify_score(_score: Score) -> void:
+	pass

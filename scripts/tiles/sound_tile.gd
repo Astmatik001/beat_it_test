@@ -15,6 +15,8 @@ func clear_controller_container():
 func add_modificator_child(modificator: modificator_tile, order: int):
 	$controller_container.add_modificator_child(modificator, order)
 
-signal bring_it_back(who: modificator_tile)
-func _on_controller_container_bring_it_back(who: modificator_tile) -> void:
-	bring_it_back.emit(who)
+func get_modifiers() -> Array[modificator_tile]:
+	var mod_arr: Array[modificator_tile] = []
+	for controller in $controller_container.get_children():
+		mod_arr.append(controller.get_child(0))
+	return mod_arr

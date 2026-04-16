@@ -7,3 +7,6 @@ func get_tile_type() -> int:
 	
 func modify_sound(o) -> void:
 	o.change_scale(0.25)
+
+func modify_score(score) -> void:
+	score.engine += 1
