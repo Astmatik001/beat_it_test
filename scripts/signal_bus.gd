@@ -1,12 +1,5 @@
 extends Node
 
-var playbacking: bool 
-func toggle_playbacking():
-	playbacking = not playbacking
-	
-
-func _ready() -> void:
-	playbacking = false
 func _process(_delta: float) -> void:
 	pass
 

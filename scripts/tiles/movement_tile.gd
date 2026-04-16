@@ -21,7 +21,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == 1:
 			toggle_follow_mouse()
-			if not SignalBus.playbacking:
+			if not GlobalVariables.playbacking:
 				play_my_sound()
 			SignalBus.mouse_button_clicked.emit(self)
 

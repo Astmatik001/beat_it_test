@@ -6,6 +6,7 @@ DONE:
 	tile types as enum
 	removed create scene signal
 TODO:
+	make moving tiles impossible while playbacking
 	
 	make more levels
 		maybe a level constructor
