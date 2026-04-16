@@ -4,7 +4,7 @@ TODAY:
 
 DONE:
 	tile types as enum
-	removed reset scene signal
+	removed create scene signal
 TODO:
 	
 	make more levels
