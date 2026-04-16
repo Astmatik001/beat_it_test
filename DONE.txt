@@ -46,3 +46,7 @@
 	made modifiers modify sound object directly
 	ignored some warnings
 	changing modifier positions
+
+15.04.26
+	proper menu/level/stuff classes
+	item abstract class

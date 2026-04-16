@@ -1,9 +1,9 @@
 TODAY: 
-	make main menu and levels
-	make items
+	score items
+	tile types as enum
+	
 
 DONE:
-	proper menu/level/stuff classes
 TODO:
 	
 	make more levels

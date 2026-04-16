@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 SignalBus="*res://scripts/signal_bus.gd"
 LevelLibrary="*res://scripts/levels/level_library.gd"
+GlobalVariables="*uid://cq8iq4l3jgei1"
 
 [dotnet]
 

@@ -8,5 +8,5 @@ func _ready() -> void:
 	$sound_object.set_sound(b1_stream)
 
 
-func get_tile_subtype() -> String:
-	return "kick"
+func get_tile_type() -> int:
+	return GlobalVariables.Kick

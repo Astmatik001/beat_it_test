@@ -28,8 +28,8 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 func reset_position() -> void:
 	position = default_position
 
-func get_tile_type() -> String:
-	return "movement_tile"
+func get_tile_type() -> int:
+	return GlobalVariables.Movement
 
 @warning_ignore("unused_signal")
 signal release_me()

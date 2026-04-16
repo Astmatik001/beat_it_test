@@ -15,8 +15,8 @@ func get_sound_tile() -> sound_tile:
 	return null
 	
 
-func get_tile_type() -> String:
-	return "tile_spot"
+func get_tile_type() -> int:
+	return GlobalVariables.Space
 
 func add_sound_child(child: sound_tile):
 	add_child(child)

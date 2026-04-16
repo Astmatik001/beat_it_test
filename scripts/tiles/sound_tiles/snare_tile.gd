@@ -12,5 +12,5 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if follow_mouse: position = get_global_mouse_position()
 
-func get_tile_subtype() -> String:
-	return "snare"
+func get_tile_type() -> int:
+	return GlobalVariables.Snare
