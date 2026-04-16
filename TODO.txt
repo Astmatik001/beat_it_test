@@ -1,9 +1,10 @@
 TODAY: 
 	score items
-	tile types as enum
-	
+	modifiers modify score
 
 DONE:
+	tile types as enum
+	removed reset scene signal
 TODO:
 	
 	make more levels
