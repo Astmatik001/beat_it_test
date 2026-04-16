@@ -8,10 +8,6 @@ func play_my_sound() -> void:
 		controller.get_child(0).modify_sound($sound_object)
 	$sound_object.play_my_sound()
 
-
-func get_tile_type() -> int:
-	return GlobalVariables.Sound
-
 func clear_controller_container():
 	for child in $controller_container.get_children():
 		child.release()
