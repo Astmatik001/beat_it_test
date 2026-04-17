@@ -6,10 +6,8 @@ extends modificator_tile
 func _ready() -> void:
 	pass # Replace with function body.
 
+func get_tile_type() -> int:
+	return(GlobalVariables.Placeholder)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if follow_mouse: position = get_global_mouse_position()
-
-func get_tile_subtype() -> String:
-	return("impact")
+func modify_sound(sound):
+	pass

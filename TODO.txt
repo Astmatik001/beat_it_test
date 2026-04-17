@@ -1,10 +1,7 @@
 TODAY: 
 	score items
 DONE:
-	tile types as enum
-	removed create scene signal
-	score class
-	modifiers modify score
+	movement state machine
 TODO:
 	make moving tiles impossible while playbacking
 	

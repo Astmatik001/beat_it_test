@@ -50,3 +50,9 @@
 15.04.26
 	proper menu/level/stuff classes
 	item abstract class
+
+16.04.26
+	tile types as enum
+	removed create scene signal
+	score class
+	modifiers modify score

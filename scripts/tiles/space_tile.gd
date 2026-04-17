@@ -24,13 +24,9 @@ func add_sound_child(child: sound_tile):
 
 func _on_release_me():
 	var child: sound_tile = get_child(2)
-	#var modifiers = child.get_modifiers()
 	child.release_me.disconnect(_on_release_me)
 	remove_child(child)
 	SignalBus.bring_it_back.emit(child)
-	#for mod in modifiers:
-		#SignalBus.bring_it_back.emit(mod)
-		
 
 func is_getting_followed() -> bool:
 	if get_children().size() > 2:
