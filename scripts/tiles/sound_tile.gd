@@ -20,3 +20,10 @@ func get_modifiers() -> Array[modificator_tile]:
 	for controller in $controller_container.get_children():
 		mod_arr.append(controller.get_child(0))
 	return mod_arr
+
+func count_score() -> Score:
+	var score = Score.new()
+	var modifiers = get_modifiers()
+	for modifier in modifiers:
+		modifier.modify_score(score)
+	return score

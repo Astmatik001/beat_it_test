@@ -9,3 +9,8 @@ func _ready() -> void:
 
 func get_tile_type() -> int:
 	return GlobalVariables.Snare
+
+func count_score() -> Score:
+	var score = super()
+	score.engine += 1
+	return score

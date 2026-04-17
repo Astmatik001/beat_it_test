@@ -8,3 +8,8 @@ func _ready() -> void:
 
 func get_tile_type() -> int:
 	return GlobalVariables.HiHat
+
+func count_score() -> Score:
+	var score = super()
+	score.constant += 1
+	return score

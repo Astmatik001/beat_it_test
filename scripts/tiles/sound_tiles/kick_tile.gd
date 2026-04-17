@@ -7,6 +7,10 @@ var b1_stream = preload("res://streams/b1_stream.tres")
 func _ready() -> void:
 	$sound_object.set_sound(b1_stream)
 
-
 func get_tile_type() -> int:
 	return GlobalVariables.Kick
+
+func count_score() -> Score:
+	var score = super()
+	score.beat += 1
+	return score
