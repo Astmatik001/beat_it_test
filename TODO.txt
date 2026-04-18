@@ -1,7 +1,8 @@
 TODAY: 
-	score items
 DONE:
-	movement state machine
+	score items
+	picking items
+	item inventory
 TODO:
 	make moving tiles impossible while playbacking
 	

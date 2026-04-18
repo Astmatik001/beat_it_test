@@ -31,5 +31,3 @@ shape = SubResource("RectangleShape2D_3u4i4")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_l5hck")
-
-[connection signal="input_event" from="." to="." method="_on_input_event"]

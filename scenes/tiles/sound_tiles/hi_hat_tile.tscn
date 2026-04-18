@@ -22,24 +22,21 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1g8o8"]
 
-[node name="HiHatTile" type="Area2D"]
+[node name="HiHatTile" type="Area2D" unique_id=1310017292]
 script = ExtResource("1_musjt")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2142773061]
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3cjd8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1904392719]
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_1g8o8")
 
-[node name="sound_object" type="AudioStreamPlayer2D" parent="."]
+[node name="sound_object" type="AudioStreamPlayer2D" parent="." unique_id=1356694074]
 script = ExtResource("3_cut5r")
 
-[node name="controller_container" type="VBoxContainer" parent="."]
+[node name="controller_container" type="VBoxContainer" parent="." unique_id=513733659]
 offset_right = 20.0
 script = ExtResource("4_sxnno")
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="input_event" from="." to="." method="_on_input_event"]

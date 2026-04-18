@@ -33,5 +33,3 @@ script = ExtResource("2_6t4vx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1628151818]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_yxu3a")
-
-[connection signal="input_event" from="." to="." method="_on_input_event"]

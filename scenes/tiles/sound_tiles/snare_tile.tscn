@@ -40,6 +40,3 @@ sprite_frames = SubResource("SpriteFrames_qot0o")
 [node name="controller_container" type="VBoxContainer" parent="." unique_id=386396376]
 offset_right = 20.0
 script = ExtResource("4_glomy")
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -56,3 +56,6 @@
 	removed create scene signal
 	score class
 	modifiers modify score
+
+17.04.26
+	movement state machine
