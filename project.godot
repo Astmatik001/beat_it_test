@@ -28,8 +28,3 @@ GlobalVariables="*uid://cq8iq4l3jgei1"
 [dotnet]
 
 project/assembly_name="beat_it_test"
-
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true

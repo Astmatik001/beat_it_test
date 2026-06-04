@@ -9,4 +9,5 @@ func process_input(event) -> void:
 		if GlobalVariables.playbacking: 
 			return
 		if machine.try_pick_tile():
-			machine.change_state("dragging")
+			machine.start_drag()
+	

@@ -35,8 +35,10 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_1g8o8")
 
 [node name="sound_object" type="AudioStreamPlayer2D" parent="." unique_id=1356694074]
+bus = &"Sounds"
 script = ExtResource("3_cut5r")
 
 [node name="controller_container" type="VBoxContainer" parent="." unique_id=513733659]
+visible = false
 offset_right = 20.0
 script = ExtResource("4_sxnno")

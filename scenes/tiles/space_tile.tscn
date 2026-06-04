@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://i1aimmuaw2es" path="res://scripts/tiles/space_tile.gd" id="1_yyonv"]
 [ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="2_q4exi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc10p"]
-size = Vector2(20, 80)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbi6d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_faiwb"]
 atlas = ExtResource("2_q4exi")
@@ -25,9 +24,8 @@ animations = [{
 script = ExtResource("1_yyonv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=500867245]
-position = Vector2(0, -60)
 scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_jc10p")
+shape = SubResource("RectangleShape2D_cbi6d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1626355387]
 texture_filter = 1

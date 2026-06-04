@@ -29,8 +29,8 @@ func _on_release_me():
 func is_getting_followed() -> bool:
 	return occupied
 
-func get_follower() -> sound_tile:
-	return get_child(2)
+#func get_follower() -> sound_tile:
+	#return get_child(2)
 
 func get_mouse_position() -> int:
 	var local_pos = get_local_mouse_position()

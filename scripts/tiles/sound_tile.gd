@@ -8,12 +8,12 @@ func play_my_sound() -> void:
 		controller.get_child(0).modify_sound($sound_object)
 	$sound_object.play_my_sound()
 
-func clear_controller_container():
-	for child in $controller_container.get_children():
-		child.release()
-
-func add_modificator_child(modificator: modificator_tile, order: int):
-	$controller_container.add_modificator_child(modificator, order)
+#func clear_controller_container():
+	#for child in $controller_container.get_children():
+		#child.release()
+#
+#func add_modificator_child(modificator: modificator_tile, order: int):
+	#$controller_container.add_modificator_child(modificator, order)
 
 func get_modifiers() -> Array[modificator_tile]:
 	var mod_arr: Array[modificator_tile] = []

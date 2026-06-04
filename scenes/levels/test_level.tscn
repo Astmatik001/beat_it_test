@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dsvm2cel1ek3b" path="res://scripts/level_assets/space_dispencer.gd" id="5_4asn1"]
 [ext_resource type="Script" uid="uid://cngnwgewy3ikf" path="res://scripts/level_assets/button_dispencer.gd" id="6_dw7u0"]
 [ext_resource type="Script" uid="uid://bqepgrxy32lq8" path="res://scripts/level_assets/score_calc.gd" id="7_cyt5c"]
+[ext_resource type="Script" uid="uid://bciwdtbxvb8a1" path="res://scripts/level_assets/mouse.gd" id="8_7x1jh"]
 
 [node name="Node2D" type="Node2D" unique_id=2082568141]
 light_mask = 7
@@ -44,6 +45,9 @@ script = ExtResource("6_dw7u0")
 
 [node name="space_dispencer" type="Node" parent="score_calc/movement_machine" unique_id=1538580119]
 script = ExtResource("5_4asn1")
+
+[node name="Mouse" type="Node2D" parent="score_calc/movement_machine" unique_id=792877387]
+script = ExtResource("8_7x1jh")
 
 [connection signal="button_down" from="play_button" to="." method="_on_play_button_button_down"]
 [connection signal="button_down" from="reroll_button" to="." method="_on_reroll_button_button_down"]

@@ -30,6 +30,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_wbdml")
 
 [node name="sound_object" type="AudioStreamPlayer2D" parent="." unique_id=1656062683]
+bus = &"Sounds"
 script = ExtResource("2_iufiy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=806050653]
@@ -38,5 +39,6 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_qot0o")
 
 [node name="controller_container" type="VBoxContainer" parent="." unique_id=386396376]
+visible = false
 offset_right = 20.0
 script = ExtResource("4_glomy")
