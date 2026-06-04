@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://duvmw7rg00jdd"]
+
+[ext_resource type="Script" uid="uid://3uf050hipku4" path="res://scripts/items/item_chooser.gd" id="1_jl7x8"]
+[ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="1_wuj4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jl7x8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4c2r"]
+atlas = ExtResource("1_wuj4t")
+region = Rect2(8, 42, 62, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m3icj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4c2r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1130672826]
+script = ExtResource("1_jl7x8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1275988766]
+scale = Vector2(6, 2)
+shape = SubResource("RectangleShape2D_jl7x8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=248024514]
+visible = false
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_m3icj")

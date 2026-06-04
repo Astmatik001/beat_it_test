@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://gppi2r5lnw5o"]
+
+[ext_resource type="Script" uid="uid://dl7yqxgmt46f" path="res://scripts/levels/start_screen.gd" id="1_jevjd"]
+
+[node name="StartScreen" type="Node2D" unique_id=410499508]
+script = ExtResource("1_jevjd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2078361316]
+
+[node name="Button" type="Button" parent="." unique_id=649895038]
+offset_left = -92.0
+offset_top = -62.0
+offset_right = 98.0
+offset_bottom = 55.0
+text = "start run"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

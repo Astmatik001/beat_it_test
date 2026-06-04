@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dlcn4tlo25n1t"]
+
+[ext_resource type="Script" uid="uid://cx7avlegb3nw8" path="res://scripts/levels/test_level.gd" id="1_qcd3b"]
+[ext_resource type="PackedScene" uid="uid://n4b6ocgyjs4p" path="res://scenes/multi_score_display.tscn" id="2_88ety"]
+[ext_resource type="PackedScene" uid="uid://c7m2acex8wk1d" path="res://scenes/playbacker.tscn" id="3_ahbqi"]
+[ext_resource type="Script" uid="uid://x72qdjt8pnmo" path="res://scripts/level_assets/movement_machine/movement_and_snapping.gd" id="4_7gix3"]
+[ext_resource type="Script" uid="uid://dsvm2cel1ek3b" path="res://scripts/level_assets/space_dispencer.gd" id="5_4asn1"]
+[ext_resource type="Script" uid="uid://cngnwgewy3ikf" path="res://scripts/level_assets/button_dispencer.gd" id="6_dw7u0"]
+[ext_resource type="Script" uid="uid://bqepgrxy32lq8" path="res://scripts/level_assets/score_calc.gd" id="7_cyt5c"]
+
+[node name="Node2D" type="Node2D" unique_id=2082568141]
+light_mask = 7
+script = ExtResource("1_qcd3b")
+
+[node name="play_button" type="Button" parent="." unique_id=355810235]
+offset_left = -550.0
+offset_top = 220.0
+offset_right = -481.0
+offset_bottom = 289.0
+text = "play"
+
+[node name="reroll_button" type="Button" parent="." unique_id=393604971]
+offset_left = -450.0
+offset_top = 220.0
+offset_right = -381.0
+offset_bottom = 289.0
+text = "rerol"
+
+[node name="score_calc" type="Node" parent="." unique_id=1866911223]
+script = ExtResource("7_cyt5c")
+
+[node name="MultiScoreDisplay" parent="score_calc" unique_id=327068609 instance=ExtResource("2_88ety")]
+position = Vector2(200, 200)
+
+[node name="movement_machine" type="Node" parent="score_calc" unique_id=2131905758]
+script = ExtResource("4_7gix3")
+
+[node name="button_dispencer" type="Node" parent="score_calc/movement_machine" unique_id=813373633]
+script = ExtResource("6_dw7u0")
+
+[node name="space_dispencer" type="Node" parent="score_calc/movement_machine" unique_id=1538580119]
+script = ExtResource("5_4asn1")
+
+[node name="Playbacker" parent="score_calc" unique_id=1232477553 instance=ExtResource("3_ahbqi")]
+position = Vector2(-450, -160)
+scale = Vector2(0.1, 2)
+
+[connection signal="button_down" from="play_button" to="." method="_on_play_button_button_down"]
+[connection signal="button_down" from="reroll_button" to="." method="_on_reroll_button_button_down"]
+[connection signal="reached_the_end" from="score_calc/Playbacker" to="score_calc" method="_on_playbacker_reached_the_end"]
