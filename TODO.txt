@@ -1,10 +1,8 @@
 TODAY: 
 DONE:
-	score items
-	picking items
-	item inventory
 TODO:
-	make moving tiles impossible while playbacking
+	make mouse event system 
+		make items also pickable by raycast collision
 	
 	make more levels
 		maybe a level constructor
@@ -17,23 +15,18 @@ TODO:
 	
 	add diff sounds to sound tiles
 	
-	
 	record modifier sfx
-
-modifier tiles
-	should inherit the same movement of sound tiles
-		so probably need to create intermideate class movement_tile
-		tile -> movement_tile -> sound_tile
-							-> modifier_tile
-
-	did i already move counting scores into the same spot that triggers sound of a tile on playback? idk
-		on the other hand, should modifier tiles get sound triggered?
-
-	POSSIBLY tile -> sound_tile -> modifier_tile, modifier tile gets some pop as a sound???????
-
-	probably still get a movement tile out there, so:
-		tile -> movement_tile -> sound tile -> modifier tile
+	
+	new tiles
+		echo modifier
 		
+	make assets
+		buttons b p t ts tsh k kh...
+		buttons for modifiers
+		background
+		enemies
+		ui?
 
-	OR modifiers are just sound tiles of a diff type? 
-		but then it's unclear how are they displayed not overlapping sound tiles
+OVERALL ESTHETIC
+	slav folktales
+	final boss - baba yaga, gorynich, solovey razboinik, etc

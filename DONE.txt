@@ -59,3 +59,12 @@
 
 17.04.26
 	movement state machine
+
+18.04.26
+	score items
+	picking items
+	item inventory
+
+04.06.26
+	fixed item not clicking bug
+	
