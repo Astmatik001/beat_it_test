@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://2vunymsk75ui"]
 
 [ext_resource type="Script" uid="uid://i1aimmuaw2es" path="res://scripts/tiles/space_tile.gd" id="1_yyonv"]
-[ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="2_q4exi"]
+[ext_resource type="Texture2D" uid="uid://dlpe2lhas4w85" path="res://assets/qarer.png" id="2_cbi6d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbi6d"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_faiwb"]
-atlas = ExtResource("2_q4exi")
-region = Rect2(224, 80, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay3j4"]
+atlas = ExtResource("2_cbi6d")
+region = Rect2(17, 16, 15, 15)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oktly"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_faiwb")
+"texture": SubResource("AtlasTexture_ay3j4")
 }],
 "loop": true,
 "name": &"default",

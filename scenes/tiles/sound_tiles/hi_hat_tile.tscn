@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://d31m5d6ly7soe"]
 
 [ext_resource type="Script" uid="uid://cls4siepxr2xo" path="res://scripts/tiles/sound_tiles/hi_hat_tile.gd" id="1_musjt"]
+[ext_resource type="Texture2D" uid="uid://dlpe2lhas4w85" path="res://assets/qarer.png" id="2_og7rs"]
 [ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="2_pki5q"]
 [ext_resource type="Script" uid="uid://di4blv1blky88" path="res://scripts/tiles/sound_object.gd" id="3_cut5r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d3rk"]
+atlas = ExtResource("2_og7rs")
+region = Rect2(17, 16, 15, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyusa"]
 atlas = ExtResource("2_pki5q")
@@ -11,6 +16,9 @@ region = Rect2(112, 32, 16, 16)
 [sub_resource type="SpriteFrames" id="SpriteFrames_3cjd8"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d3rk")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lyusa")
 }],
@@ -36,3 +44,12 @@ shape = SubResource("RectangleShape2D_1g8o8")
 [node name="sound_object" type="AudioStreamPlayer2D" parent="." unique_id=1356694074]
 bus = &"Sounds"
 script = ExtResource("3_cut5r")
+
+[node name="Label" type="Label" parent="." unique_id=1522204080]
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+text = "b"
+horizontal_alignment = 1
+vertical_alignment = 1

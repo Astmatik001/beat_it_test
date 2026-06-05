@@ -74,3 +74,4 @@
 	removed junk code
 	reworked scoring getting children
 	new battle level
+	abstract level class

@@ -1,6 +1,8 @@
 TODAY: 
 DONE:
 TODO:
+	fix rerol restting stacks
+	
 	make mouse event system 
 		make items also pickable by raycast collision
 	
