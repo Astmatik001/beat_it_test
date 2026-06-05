@@ -65,33 +65,11 @@ func start_drag() -> void:
 	follower.reparent($"Mouse")
 	follower.position = Vector2(0,0)
 	change_state("dragging")
-	
-#func update_drag_position() -> void:
-	#follower.set_position(get_global_mouse_position())
 
 func release_drag() -> void:
-	#var next: movement_tile = follower
-	#while next != null:
-		#next.reparent($button_dispencer)
-		#next.reset_position()
-		#for child in next.get_children():
-			#if child is movement_tile:
-				#next = child
-				#continue
-		#next = null
 	follower.reparent($button_dispencer)
 	follower.reset_position()
 
-#func place_sound() -> void:
-	#$button_dispencer.remove_child(follower)
-	#destination.add_sound_child(follower)
-	#follower.set_position(Vector2(0,0))
-#
-#func place_modificator() -> void:
-	#var order = destination.get_mouse_position()
-	#$button_dispencer.move_child_tile(follower, destination.get_sound_tile(), order)
-
 func set_follower_to_destination() -> void:
-	print(follower, destination)
 	follower.reparent(destination)
 	follower.position = Vector2(0, -30)

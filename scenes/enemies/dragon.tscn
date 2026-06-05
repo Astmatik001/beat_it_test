@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ctgg6l6gqrme1"]
+
+[ext_resource type="Script" uid="uid://bjgrrheuptfjc" path="res://scripts/enemies/dragon.gd" id="1_7cpjs"]
+[ext_resource type="Texture2D" uid="uid://b4466fv8ejg6p" path="res://assets/dragon.jpg" id="1_ankng"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cpjs"]
+atlas = ExtResource("1_ankng")
+region = Rect2(0, 0, 840, 594)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mm4vl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cpjs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Dragon" type="Node2D" unique_id=1500093494]
+script = ExtResource("1_7cpjs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=606635434]
+sprite_frames = SubResource("SpriteFrames_mm4vl")

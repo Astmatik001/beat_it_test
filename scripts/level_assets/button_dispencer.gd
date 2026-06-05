@@ -13,12 +13,12 @@ var short = preload("res://scenes/tiles/modificator_tiles/short_tile.tscn")
 var tile_array = [kick, snare, hi_hat,  loud, quiet, long, short]
 
 func _ready() -> void:
-	SignalBus.bring_it_back.connect(_on_bring_it_back)
+	pass
 
 func generate_tiles(number: int):
 	for i in range(0,number):
 		var _tile: movement_tile
-		var _choice = tile_array.pick_random()
+		var _choice = tile_array[GlobalVariables.rng.randi_range(0,len(tile_array) - 1)]
 		_tile = _choice.instantiate()
 		add_child(_tile)
 		_tile.default_position = Vector2(i*50 - 400, 100)
@@ -26,19 +26,14 @@ func generate_tiles(number: int):
 
 func reroll_tiles():
 	for _tile in get_children():
-		if _tile is space_tile: continue
-		
-		var pos = _tile.default_position
-		var new_tile = tile_array.pick_random().instantiate()
-		new_tile.default_position = pos
-		add_child(new_tile)
-		new_tile.reset_position()
-		_tile.queue_free()
+		if _tile is movement_tile:
+			var pos = _tile.default_position
+			var new_tile = tile_array[GlobalVariables.rng.randi_range(0,len(tile_array) - 1)].instantiate()
+			new_tile.default_position = pos
+			add_child(new_tile)
+			new_tile.reset_position()
+			_tile.queue_free()
 
-func move_child_tile(modificator: modificator_tile, sound: sound_tile, order: int):
-	remove_child(modificator)
-	sound.add_modificator_child(modificator, order)
-	
-func _on_bring_it_back(who: movement_tile):
-	add_child(who)
-	who.reset_position()
+
+func _on_reroll_button_button_down() -> void:
+	reroll_tiles()

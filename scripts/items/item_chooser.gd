@@ -16,7 +16,7 @@ func _ready() -> void:
 func generate_items() -> void:
 	for i in range(3):
 		var _item: item
-		_item = item_array.pick_random().instantiate()
+		_item = item_array[GlobalVariables.rng.randi_range(0,len(item_array) - 1)].instantiate()
 		add_child(_item)
 		_item.collision_layer = 5
 		_item.position += Vector2(-40 * ( i - 1), 0)

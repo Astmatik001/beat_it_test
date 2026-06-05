@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://mw64is56j0ys"]
+
+[ext_resource type="Script" uid="uid://cfj6wvyxyttve" path="res://scripts/levels/battle_level.gd" id="1_bsqwc"]
+[ext_resource type="Script" uid="uid://x72qdjt8pnmo" path="res://scripts/level_assets/movement_machine/movement_machine.gd" id="2_mq6m5"]
+[ext_resource type="Script" uid="uid://cngnwgewy3ikf" path="res://scripts/level_assets/button_dispencer.gd" id="3_fneah"]
+[ext_resource type="Script" uid="uid://dsvm2cel1ek3b" path="res://scripts/level_assets/space_dispencer.gd" id="4_plx2d"]
+[ext_resource type="Script" uid="uid://bciwdtbxvb8a1" path="res://scripts/level_assets/mouse.gd" id="5_1ac32"]
+[ext_resource type="Script" uid="uid://bqepgrxy32lq8" path="res://scripts/level_assets/score_calc.gd" id="6_1ac32"]
+[ext_resource type="PackedScene" uid="uid://n4b6ocgyjs4p" path="res://scenes/multi_score_display.tscn" id="7_8ie7e"]
+[ext_resource type="PackedScene" uid="uid://c7m2acex8wk1d" path="res://scenes/playbacker.tscn" id="8_ou0n0"]
+
+[node name="BattleLevel" type="Node2D" unique_id=237504977]
+script = ExtResource("1_bsqwc")
+
+[node name="movement_machine" type="Node2D" parent="." unique_id=1354713186]
+script = ExtResource("2_mq6m5")
+
+[node name="button_dispencer" type="Node" parent="movement_machine" unique_id=836960899]
+script = ExtResource("3_fneah")
+
+[node name="reroll_button" type="Button" parent="movement_machine/button_dispencer" unique_id=836297213]
+offset_left = -450.0
+offset_top = 220.0
+offset_right = -381.0
+offset_bottom = 289.0
+text = "rerol"
+
+[node name="space_dispencer" type="Node" parent="movement_machine" unique_id=1587878498]
+script = ExtResource("4_plx2d")
+
+[node name="Mouse" type="Node2D" parent="movement_machine" unique_id=418291430]
+script = ExtResource("5_1ac32")
+
+[node name="score_calc" type="Node" parent="." unique_id=1479610548]
+script = ExtResource("6_1ac32")
+
+[node name="MultiScoreDisplay" parent="score_calc" unique_id=266486816 instance=ExtResource("7_8ie7e")]
+position = Vector2(200, 200)
+
+[node name="Playbacker" parent="score_calc" unique_id=483765422 instance=ExtResource("8_ou0n0")]
+position = Vector2(-450, -160)
+scale = Vector2(0.1, 2)
+
+[node name="play_button" type="Button" parent="score_calc" unique_id=1587054689]
+offset_left = -550.0
+offset_top = 220.0
+offset_right = -481.0
+offset_bottom = 289.0
+text = "play"
+
+[connection signal="button_down" from="movement_machine/button_dispencer/reroll_button" to="movement_machine/button_dispencer" method="_on_reroll_button_button_down"]
+[connection signal="reached_the_end" from="score_calc/Playbacker" to="score_calc" method="_on_playbacker_reached_the_end"]
+[connection signal="button_down" from="score_calc/play_button" to="score_calc" method="_on_play_button_button_down"]

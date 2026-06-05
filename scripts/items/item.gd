@@ -14,6 +14,7 @@ func modify_space_count(_counts: Array[int]) -> void:
 	pass
 
 signal ive_been_clicked(item)
+
 func _on_input_event(viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:

@@ -16,5 +16,13 @@ func reset_position() -> void:
 func is_getting_followed() -> bool:
 	return occupied
 
-@warning_ignore("unused_signal")
-signal release_me()
+func get_stack() -> Array[movement_tile]:
+	var _stack: Array[movement_tile]
+	for child in get_children():
+		if child is tile:
+			_stack	= child.get_stack()
+	_stack.append(self)
+	return _stack
+
+func modify_score(_score: Score) -> void:
+	pass

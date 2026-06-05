@@ -1,5 +1,7 @@
 extends Node
 
+var rng = RandomNumberGenerator.new()
+
 var playbacking: bool 
 func _ready() -> void:
 	playbacking = false

@@ -4,12 +4,19 @@ extends Node2D
 
 var items: Array[item] = []
 var chooser = preload("res://scenes/items/item_chooser.tscn")
-var current_level
+var target_level: int :
+	set(value):
+		target_level = value
+var current_level: level
+
 func _ready() -> void:
-	current_level = load_level(LevelLibrary.test)
+	GlobalVariables.rng.seed= randi()
+	current_level = load_level(LevelLibrary.level_scenes[target_level])
 	create_chooser()
 
-func load_level(path: String) -> test_level:
+func load_level(path: String):
+	if current_level:
+		current_level.queue_free()
 	var _level = load(path)
 	var level_instance = _level.instantiate()
 	add_child(level_instance)
@@ -27,4 +34,4 @@ func _on_item_chosen(_item: item) -> void:
 	items.append(_item)
 	control.add_child(_item)
 	current_level.pass_items(items)
-	create_chooser()
+	#create_chooser()

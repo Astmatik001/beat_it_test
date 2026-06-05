@@ -67,4 +67,10 @@
 
 04.06.26
 	fixed item not clicking bug
-	
+	fixed space tile areas
+		now tiles raycast down to detect the next parent
+
+05.06.26
+	removed junk code
+	reworked scoring getting children
+	new battle level

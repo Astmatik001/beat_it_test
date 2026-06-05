@@ -23,7 +23,13 @@ config/icon="res://icon.svg"
 
 SignalBus="*res://scripts/signal_bus.gd"
 LevelLibrary="*res://scripts/levels/level_library.gd"
+EnemyLibrary="*uid://c3xcteu0fophw"
 GlobalVariables="*uid://cq8iq4l3jgei1"
+SceneChanger="*uid://bpb1ahbg1xe2s"
+
+[display]
+
+window/vsync/vsync_mode=0
 
 [dotnet]
 

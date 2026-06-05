@@ -9,7 +9,5 @@ func _ready() -> void:
 func get_tile_type() -> int:
 	return GlobalVariables.Kick
 
-func count_score() -> Score:
-	var score = super()
+func modify_score(score: Score) -> void:
 	score.beat += 1
-	return score
