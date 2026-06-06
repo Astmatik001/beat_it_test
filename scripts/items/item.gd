@@ -3,6 +3,7 @@ extends Area2D
 
 
 @abstract func get_description() -> String
+@abstract func get_type() -> int
 
 func modify_score(_score: Score) -> void:
 	pass

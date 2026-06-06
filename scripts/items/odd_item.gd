@@ -11,3 +11,6 @@ func modify_space_count(counts: Array[int]) -> void:
 	for i in len(counts):
 		if i%2:
 			counts[i] += 1
+
+func get_type() -> int:
+	return Global.item_types.ACCESEORY

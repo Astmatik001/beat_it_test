@@ -10,3 +10,6 @@ func get_description() -> String:
 func modify_sound_count(counts: Dictionary) -> void:
 	if counts[Global.tiles.KICK]:
 		counts[Global.tiles.KICK] += 1
+
+func get_type() -> int:
+	return Global.item_types.ACCESEORY

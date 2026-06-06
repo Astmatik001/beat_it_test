@@ -9,4 +9,6 @@ func get_description() -> String:
 
 func modify_score(score: Score) -> void:
 	score.score *= 2
-	
+
+func get_type() -> int:
+	return Global.item_types.ACCESEORY

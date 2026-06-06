@@ -24,8 +24,9 @@ config/icon="res://icon.svg"
 SignalBus="*res://scripts/signal_bus.gd"
 LevelLibrary="*res://scripts/levels/level_library.gd"
 EnemyLibrary="*uid://c3xcteu0fophw"
-Global="*uid://cq8iq4l3jgei1"
+HeroLibrary="*uid://b8qn35aehub2x"
 SceneChanger="*uid://bpb1ahbg1xe2s"
+Global="*uid://cq8iq4l3jgei1"
 
 [display]
 

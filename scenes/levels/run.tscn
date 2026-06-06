@@ -6,10 +6,3 @@
 script = ExtResource("1_mggu5")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=474876624]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1269682557]
-offset_left = -300.0
-offset_top = 50.0
-offset_right = -260.0
-offset_bottom = 90.0
-theme_override_constants/separation = 18

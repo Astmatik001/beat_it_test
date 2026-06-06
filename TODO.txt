@@ -4,14 +4,11 @@ DONE:
 	changed sprites
 	fix rerol restting stacks
 	fix modifiers not doing anything to sounds
-TODO:
-	
 	fix stacking to the same spot
+TODO:
+	make items parts of a costume
 	
 	make long sounds take multiple spaces
-	Z	
-	make mouse event system 
-		make items also pickable by raycast collision
 	
 	make more levels
 		maybe a level constructor
