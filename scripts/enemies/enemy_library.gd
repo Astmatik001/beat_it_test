@@ -9,4 +9,4 @@ var enemy_scenes = {
 }
 
 func random_enemy() -> String:
-	return enemy_scenes[GlobalVariables.rng.randi_range(0, len(enemies) - 1)]
+	return enemy_scenes[Global.rng.randi_range(0, len(enemies) - 1)]

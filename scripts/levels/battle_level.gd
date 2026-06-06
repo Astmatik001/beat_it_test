@@ -13,8 +13,7 @@ func _ready() -> void:
 	level_enemy = load(EnemyLibrary.random_enemy()).instantiate()
 	add_child(level_enemy)
 	level_enemy.affect_spaces(spaces)
-	#spawn playbacker and button
-	pass
+	$score_calc.create_scene(spaces)
 
 func pass_items(items: Array[item]) -> void:
 	$score_calc.items = items

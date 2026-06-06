@@ -10,7 +10,7 @@ var target_level: int :
 var current_level: level
 
 func _ready() -> void:
-	GlobalVariables.rng.seed= randi()
+	Global.rng.seed= randi()
 	current_level = load_level(LevelLibrary.level_scenes[target_level])
 	create_chooser()
 

@@ -8,5 +8,5 @@ func get_description() -> String:
 	return description
 
 func modify_sound_count(counts: Dictionary) -> void:
-	if counts[GlobalVariables.HiHat]:
-		counts[GlobalVariables.HiHat] += 1
+	if counts[Global.tiles.HIHAT]:
+		counts[Global.tiles.HIHAT] += 1

@@ -7,7 +7,7 @@ func _ready() -> void:
 	$sound_object.set_sound(b1_stream)
 
 func get_tile_type() -> int:
-	return GlobalVariables.Kick
+	return Global.tiles.KICK
 
 func modify_score(score: Score) -> void:
 	score.beat += 1

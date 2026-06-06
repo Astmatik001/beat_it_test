@@ -7,7 +7,7 @@ var id: int:
 var occupied = false
 
 func get_tile_type() -> int:
-	return GlobalVariables.Space
+	return Global.tiles.SPACE
 
 func is_getting_followed() -> bool:
 	if get_sound_tile():
@@ -21,12 +21,13 @@ func get_sound_tile() -> sound_tile:
 			return child
 	return null
 
-func count_score() -> Score:
+func count_score(sound_counts: Dictionary) -> Score:
 #	state.count_score
 	var score = Score.new()
 	var sound = get_sound_tile()
 	if sound:
-		var stack = sound.get_stack()
-		for _item in stack:
-			_item.modify_score(score)
+		for i in sound_counts[sound.get_tile_type()]:
+			var stack = sound.get_stack()
+			for _item in stack:
+				_item.modify_score(score)
 	return score

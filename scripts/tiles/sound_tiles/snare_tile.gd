@@ -7,7 +7,7 @@ func _ready() -> void:
 	$sound_object.set_sound(pf1_stream)
 
 func get_tile_type() -> int:
-	return GlobalVariables.Snare
+	return Global.tiles.SNARE
 
 func modify_score(score: Score) -> void:
 	score.engine += 1

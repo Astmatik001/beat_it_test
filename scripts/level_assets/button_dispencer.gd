@@ -18,7 +18,7 @@ func _ready() -> void:
 func generate_tiles(number: int):
 	for i in range(0,number):
 		var _tile: movement_tile
-		var _choice = tile_array[GlobalVariables.rng.randi_range(0,len(tile_array) - 1)]
+		var _choice = tile_array[Global.rng.randi_range(0,len(tile_array) - 1)]
 		_tile = _choice.instantiate()
 		add_child(_tile)
 		_tile.default_position = Vector2(i*50 - 400, 100)
@@ -28,7 +28,7 @@ func reroll_tiles():
 	for _tile in get_children():
 		if _tile is movement_tile:
 			var pos = _tile.default_position
-			var new_tile = tile_array[GlobalVariables.rng.randi_range(0,len(tile_array) - 1)].instantiate()
+			var new_tile = tile_array[Global.rng.randi_range(0,len(tile_array) - 1)].instantiate()
 			new_tile.default_position = pos
 			add_child(new_tile)
 			new_tile.reset_position()

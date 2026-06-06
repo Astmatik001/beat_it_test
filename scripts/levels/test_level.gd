@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _on_play_button_button_down() -> void:
 	$score_calc/Playbacker.global_position = Vector2(-450, -160)
-	GlobalVariables.toggle_playbacking()
+	Global.toggle_playbacking()
 	$score_calc.reset_score()
 
 

@@ -6,7 +6,7 @@ func _ready() -> void:
 	pass
 
 func get_tile_type() -> int:
-	return(GlobalVariables.Placeholder)
+	return(Global.Placeholder)
 
 func modify_sound(sound):
 	pass

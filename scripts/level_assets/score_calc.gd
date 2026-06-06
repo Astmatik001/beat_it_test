@@ -27,9 +27,9 @@ func create_scene(_spaces: Array[space_tile]):
 func reset_counts():
 	space_counts.resize(len(spaces))
 	space_counts.fill(1)
-	sound_counts[GlobalVariables.Kick] = 1
-	sound_counts[GlobalVariables.HiHat] = 1
-	sound_counts[GlobalVariables.Snare] = 1
+	sound_counts[Global.tiles.KICK] = 1
+	sound_counts[Global.tiles.HIHAT] = 1
+	sound_counts[Global.tiles.SNARE] = 1
 #
 func reset_score():
 	score.reset()
@@ -41,14 +41,15 @@ func reset_score():
 	#$MultiScoreDisplay.score_update(score)
 	
 func add_space_score(space: space_tile):
-	var s = space.count_score()
-	score.score += s.score
-	$MultiScoreDisplay.score_update(score)
+	for i in space_counts[space.id]:
+		var s = space.count_score(sound_counts)
+		score.score += s.score
+		$MultiScoreDisplay.score_update(score)
 
 func _on_playbacker_reached_the_end() -> void:
 	reset_score()
 
 func _on_play_button_button_down() -> void:
 	$Playbacker.global_position = Vector2(-450, -160)
-	GlobalVariables.toggle_playbacking()
+	Global.toggle_playbacking()
 	reset_score()

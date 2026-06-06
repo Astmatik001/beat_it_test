@@ -7,7 +7,7 @@ func _ready() -> void:
 	$sound_object.set_sound(t1_stream)
 
 func get_tile_type() -> int:
-	return GlobalVariables.HiHat
+	return Global.tiles.HIHAT
 
 func modify_score(score: Score) -> void:
 	score.constant += 1
