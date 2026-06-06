@@ -1,13 +1,6 @@
 TODAY: 
 DONE:
-	items work again
-	changed sprites
-	fix rerol restting stacks
-	fix modifiers not doing anything to sounds
-	fix stacking to the same spot
 TODO:
-	make items parts of a costume
-	
 	make long sounds take multiple spaces
 	
 	make more levels

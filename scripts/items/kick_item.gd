@@ -12,4 +12,4 @@ func modify_sound_count(counts: Dictionary) -> void:
 		counts[Global.tiles.KICK] += 1
 
 func get_type() -> int:
-	return Global.item_types.ACCESEORY
+	return Global.item_types.AMULET

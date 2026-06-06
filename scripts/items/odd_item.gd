@@ -13,4 +13,4 @@ func modify_space_count(counts: Array[int]) -> void:
 			counts[i] += 1
 
 func get_type() -> int:
-	return Global.item_types.ACCESEORY
+	return Global.item_types.AMULET

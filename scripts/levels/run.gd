@@ -29,7 +29,7 @@ func create_chooser() -> void:
 	add_child(_chooser)
 	
 func _on_item_chosen(_item: item) -> void:
-	current_hero.add_item(_item)
+	current_hero.place_item(_item)
 	current_level.pass_items(current_hero.items)
 	#create_chooser()
 	

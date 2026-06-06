@@ -11,4 +11,4 @@ func modify_score(score: Score) -> void:
 	score.score *= 2
 
 func get_type() -> int:
-	return Global.item_types.ACCESEORY
+	return Global.item_types.AMULET

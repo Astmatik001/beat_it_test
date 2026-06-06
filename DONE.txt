@@ -75,3 +75,11 @@
 	reworked scoring getting children
 	new battle level
 	abstract level class
+
+06.06.26
+	items work again
+	fix rerol restting stacks
+	fix modifiers
+	fix stacking to the same spot
+	hero and item types
+	body parts
