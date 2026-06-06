@@ -20,7 +20,7 @@ func count_score(sound_counts: Dictionary) -> Score:
 	var sound = get_sound_tile()
 	if sound:
 		for i in sound_counts[sound.get_tile_type()]:
-			var stack = sound.get_stack()
+			var stack = sound.get_tile_stack()
 			for _item in stack:
 				_item.modify_score(score)
 	return score

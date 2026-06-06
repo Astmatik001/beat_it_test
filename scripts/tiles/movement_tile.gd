@@ -12,11 +12,12 @@ func set_default_position(new_position: Vector2):
 func reset_position() -> void:
 	position = default_position
 
-func get_stack() -> Array[movement_tile]:
+func get_tile_stack() -> Array[movement_tile]:
 	var _stack: Array[movement_tile]
 	for child in get_children():
 		if child is tile:
-			_stack	= child.get_stack()
+			_stack	= child.get_tile_stack()
+			break
 	_stack.append(self)
 	return _stack
 

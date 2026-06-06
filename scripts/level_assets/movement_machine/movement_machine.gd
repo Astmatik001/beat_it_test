@@ -51,9 +51,15 @@ func try_pick_tile() -> bool:
 	return false
 	
 func try_get_destination() -> tile:
-	var result = get_downward_collisions(get_global_mouse_position())
-	if result:
-		var collider = result["collider"]
+	var down_result = get_downward_collisions(get_global_mouse_position())
+	var point_results = get_point_collisions(get_global_mouse_position())
+	for result in point_results:
+		var collider = result.collider
+		if collider:
+			if collider is tile and collider != follower:
+				return null
+	if down_result:
+		var collider = down_result["collider"]
 		if collider is tile:
 			destination = collider
 			return collider

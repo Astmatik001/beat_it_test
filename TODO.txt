@@ -1,7 +1,12 @@
 TODAY: 
 DONE:
-TODO:
+	items work again
+	changed sprites
 	fix rerol restting stacks
+	fix modifiers not doing anything to sounds
+TODO:
+	
+	fix stacking to the same spot
 	
 	make long sounds take multiple spaces
 	Z	
