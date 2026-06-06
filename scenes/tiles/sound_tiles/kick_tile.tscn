@@ -46,6 +46,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mxuuj")
 
 [node name="Label" type="Label" parent="." unique_id=50898558]
+texture_filter = 1
 offset_left = -15.0
 offset_top = -15.0
 offset_right = 15.0

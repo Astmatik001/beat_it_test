@@ -27,12 +27,13 @@ func generate_tiles(number: int):
 func reroll_tiles():
 	for _tile in get_children():
 		if _tile is movement_tile:
-			var pos = _tile.default_position
-			var new_tile = tile_array[Global.rng.randi_range(0,len(tile_array) - 1)].instantiate()
-			new_tile.default_position = pos
-			add_child(new_tile)
-			new_tile.reset_position()
-			_tile.queue_free()
+			if not _tile.is_getting_followed():
+				var pos = _tile.default_position
+				var new_tile = tile_array[Global.rng.randi_range(0,len(tile_array) - 1)].instantiate()
+				new_tile.default_position = pos
+				add_child(new_tile)
+				new_tile.reset_position()
+				_tile.queue_free()
 
 
 func _on_reroll_button_button_down() -> void:

@@ -2,7 +2,6 @@
 extends tile
 
 var default_position: Vector2
-var occupied = false
 
 func get_default_position() -> Vector2:
 	return default_position
@@ -12,9 +11,6 @@ func set_default_position(new_position: Vector2):
 
 func reset_position() -> void:
 	position = default_position
-
-func is_getting_followed() -> bool:
-	return occupied
 
 func get_stack() -> Array[movement_tile]:
 	var _stack: Array[movement_tile]

@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://cx0l5e2hv4aht"]
 
 [ext_resource type="Script" uid="uid://djqyx845hkw8e" path="res://scripts/tiles/modificator_tiles/short_tile.gd" id="1_35lt0"]
+[ext_resource type="Texture2D" uid="uid://dlpe2lhas4w85" path="res://assets/qarer.png" id="2_yut3o"]
 [ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="3_4cj2q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7i40"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16w3b"]
+atlas = ExtResource("2_yut3o")
+region = Rect2(17, 32, 15, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtgc5"]
 atlas = ExtResource("3_4cj2q")
@@ -12,6 +17,9 @@ region = Rect2(176, 0, 16, 16)
 [sub_resource type="SpriteFrames" id="SpriteFrames_2syjv"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16w3b")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wtgc5")
 }],
@@ -31,3 +39,12 @@ shape = SubResource("RectangleShape2D_f7i40")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2syjv")
+
+[node name="Label" type="Label" parent="." unique_id=1569487073]
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1

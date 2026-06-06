@@ -3,6 +3,8 @@ DONE:
 TODO:
 	fix rerol restting stacks
 	
+	make long sounds take multiple spaces
+	Z	
 	make mouse event system 
 		make items also pickable by raycast collision
 	

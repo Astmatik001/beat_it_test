@@ -4,17 +4,10 @@ class_name space_tile
 var id: int:
 	set(value):
 		id = value
-var occupied = false
 
 func get_tile_type() -> int:
 	return Global.tiles.SPACE
 
-func is_getting_followed() -> bool:
-	if get_sound_tile():
-		return true
-	else: return false
-	#return occupied
-	
 func get_sound_tile() -> sound_tile:
 	for child in get_children():
 		if child is sound_tile:
