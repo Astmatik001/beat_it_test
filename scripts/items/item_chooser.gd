@@ -1,32 +1,24 @@
 class_name item_chooser
-extends Area2D
-
-
-var kick = preload("res://scenes/items/amulets/kick_item.tscn")
-var snare = preload("res://scenes/items/amulets/snare_item.tscn")
-var hi_hat = preload("res://scenes/items/amulets/hi_hat_item.tscn")
-var double = preload("res://scenes/items/amulets/double_item.tscn")
-var odd = preload("res://scenes/items/amulets/odd_item.tscn")
-
-var item_array = [kick, snare, hi_hat, double, odd]
+extends Control
 
 func _ready() -> void:
 	generate_items()
 
 func generate_items() -> void:
-	for i in range(3):
+	for _container in $HBoxContainer.get_children():
+		var part = _container.get_child(0)
 		var _item: item
-		_item = item_array[Global.rng.randi_range(0,len(item_array) - 1)].instantiate()
-		add_child(_item)
+		var rng_item = Global.rng.randi_range(0,len(ItemLibrary.items) - 1)
+		_item = load(ItemLibrary.item_scenes[rng_item]).instantiate()
 		_item.collision_layer = 5
-		_item.position += Vector2(-40 * ( i - 1), 0)
 		_item.ive_been_clicked.connect(_on_item_clicked)
+		part.add_child(_item)
 
 signal item_chosen(item)
 
 func _on_item_clicked(_item):
 	_item.position = Vector2(0, 0)
 	_item.ive_been_clicked.disconnect(_on_item_clicked)
-	remove_child(_item)
+	_item.get_parent().remove_child(_item)
 	item_chosen.emit(_item)
 	queue_free()

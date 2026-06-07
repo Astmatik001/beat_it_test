@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3uf050hipku4" path="res://scripts/items/item_chooser.gd" id="1_jl7x8"]
 [ext_resource type="Texture2D" uid="uid://twg5fxdswd58" path="res://assets/MediavelFree.png" id="1_wuj4t"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jl7x8"]
+[ext_resource type="Script" uid="uid://7a3bfcwynfsr" path="res://scripts/heroes/body_part.gd" id="3_u4c2r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4c2r"]
 atlas = ExtResource("1_wuj4t")
@@ -20,15 +19,48 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Area2D" type="Area2D" unique_id=1130672826]
+[node name="Area2D" type="Control" unique_id=948910061]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
 script = ExtResource("1_jl7x8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1275988766]
-scale = Vector2(6, 2)
-shape = SubResource("RectangleShape2D_jl7x8")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=248024514]
-visible = false
+self_modulate = Color(1, 1, 1, 0.19607843)
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_m3icj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=576513868]
+layout_mode = 0
+offset_left = -62.0
+offset_top = -21.0
+offset_right = 62.0
+offset_bottom = 21.0
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=297044269]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="body_part" type="Control" parent="HBoxContainer/CenterContainer" unique_id=609863061]
+layout_mode = 2
+script = ExtResource("3_u4c2r")
+metadata/_custom_type_script = "uid://7a3bfcwynfsr"
+
+[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer" unique_id=2122648564]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="body_part" type="Control" parent="HBoxContainer/CenterContainer2" unique_id=1759725309]
+layout_mode = 2
+script = ExtResource("3_u4c2r")
+metadata/_custom_type_script = "uid://7a3bfcwynfsr"
+
+[node name="CenterContainer3" type="CenterContainer" parent="HBoxContainer" unique_id=854349841]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="body_part" type="Control" parent="HBoxContainer/CenterContainer3" unique_id=2143977208]
+layout_mode = 2
+script = ExtResource("3_u4c2r")
+metadata/_custom_type_script = "uid://7a3bfcwynfsr"

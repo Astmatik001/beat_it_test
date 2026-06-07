@@ -26,6 +26,7 @@ LevelLibrary="*res://scripts/levels/level_library.gd"
 EnemyLibrary="*uid://c3xcteu0fophw"
 HeroLibrary="*uid://b8qn35aehub2x"
 SceneChanger="*uid://bpb1ahbg1xe2s"
+ItemLibrary="*uid://cklkir2d3toff"
 Global="*uid://cq8iq4l3jgei1"
 
 [display]

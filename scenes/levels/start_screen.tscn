@@ -26,7 +26,8 @@ text = "BATTLE"
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=1788268903]
 texture_filter = 1
 layout_mode = 2
-text = "NUFIN"
+text = "ITEMS"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
