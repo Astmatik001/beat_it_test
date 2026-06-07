@@ -83,3 +83,10 @@
 	fix stacking to the same spot
 	hero and item types
 	body parts
+
+07.06.26
+	test item chooser level
+	item descriptions on hover
+	equipped items on hover
+	bunch o new temp items
+	

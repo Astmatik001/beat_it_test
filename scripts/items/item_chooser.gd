@@ -25,20 +25,29 @@ func _on_item_clicked(_item: item):
 	_item.ive_been_entered.disconnect(_on_item_entered)
 	_item.ive_been_exited.disconnect(_on_item_exited)
 	_item.get_parent().remove_child(_item)
+	slot_container.queue_free()
 	item_chosen.emit(_item)
 	queue_free()
 
 var slot_container: HBoxContainer
 var current_displayed_item: item
+var _slot_center_control: CenterContainer
 
 func _on_item_entered(_item: item):
 	current_displayed_item = _item
-	if slot_container:
-		slot_container.queue_free()
+	if _slot_center_control:
+		_slot_center_control.queue_free()
+	
+	_slot_center_control = CenterContainer.new()
+	_slot_center_control.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_item.add_child(_slot_center_control)
+	_slot_center_control.position = Vector2(-50, 50)
+	_slot_center_control.size = Vector2(100, 50)
+
 	slot_container = HBoxContainer.new()
-	slot_container.mouse_filter = Control.MOUSE_FILTER_STOP
-	slot_container.position = Vector2(-20, 50)
-	_item.add_sibling(slot_container)
+	slot_container.alignment = BoxContainer.ALIGNMENT_CENTER
+	_slot_center_control.add_child(slot_container)
+
 	var parts: Dictionary
 	match _item.get_type():
 		Global.item_types.HAT:
@@ -55,7 +64,7 @@ func _on_item_entered(_item: item):
 			parts = current_hero.body[Global.body_parts.FEET]
 	for part in parts:
 		var _center_container = CenterContainer.new()
-		_center_container.size_flags_horizontal = Control.SIZE_FILL
+		_center_container.custom_minimum_size = Vector2(30,30)
 		slot_container.add_child(_center_container)
 		var _color_square = ColorRect.new()
 		_color_square.color = Color(0.2, 0.2, 0.2)

@@ -30,5 +30,6 @@ func create_hero(_hero: int) -> void:
 	current_hero.position = Vector2(-400, 200)
 	
 func _on_item_chosen(_item: item):
-	current_hero.try_place_item(_item)
+	#current_hero.try_place_item(_item)
+	current_hero.replace_item(_item)
 	current_level.pass_items(current_hero.get_items())

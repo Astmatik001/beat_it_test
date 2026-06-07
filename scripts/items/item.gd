@@ -20,11 +20,15 @@ func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	
-	_label= Label.new()
+	_label = Label.new()
 	_label.text = get_description()
-	_label.position = Vector2(-50,-70)
-	_label.visible = false
+	_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	add_child(_label)
+	_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER, Control.PRESET_MODE_MINSIZE)
+	_label.position.y = -70
+	hide_description()
+
 
 signal ive_been_clicked(_item: item)
 signal ive_been_entered(_item: item)
