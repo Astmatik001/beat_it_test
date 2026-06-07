@@ -19,9 +19,9 @@ func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 
-signal ive_been_clicked(item)
-signal ive_been_entered(item)
-signal ive_been_exited(item)
+signal ive_been_clicked(_item: item)
+signal ive_been_entered(_item: item)
+signal ive_been_exited(_item: item)
 
 func _on_input_event(viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
@@ -29,8 +29,15 @@ func _on_input_event(viewport, event, _shape_idx):
 			ive_been_clicked.emit(self)
 			viewport.set_input_as_handled()
 
+var _label: Label
 func _on_mouse_entered() -> void:
-	ive_been_entered.emit()
+	get_description()
+	_label = Label.new()
+	_label.text = get_description()
+	_label.position = Vector2(-50,-80)
+	add_child(_label)
+	ive_been_entered.emit(self)
 
 func _on_mouse_exited() -> void:
-	ive_been_exited.emit()
+	_label.queue_free()
+	ive_been_exited.emit(self)

@@ -12,13 +12,24 @@ func generate_items() -> void:
 		_item = load(ItemLibrary.item_scenes[rng_item]).instantiate()
 		_item.collision_layer = 5
 		_item.ive_been_clicked.connect(_on_item_clicked)
+		_item.ive_been_entered.connect(_on_item_entered)
+		_item.ive_been_exited.connect(_on_item_exited)
 		part.add_child(_item)
 
 signal item_chosen(item)
 
-func _on_item_clicked(_item):
+func _on_item_clicked(_item: item):
 	_item.position = Vector2(0, 0)
 	_item.ive_been_clicked.disconnect(_on_item_clicked)
+	_item.ive_been_entered.disconnect(_on_item_entered)
+	_item.ive_been_exited.disconnect(_on_item_exited)
 	_item.get_parent().remove_child(_item)
 	item_chosen.emit(_item)
 	queue_free()
+
+func _on_item_entered(_item: item):
+	#TODO show slots
+	pass
+func _on_item_exited(_item: item):
+	#TODO hide slots
+	pass
