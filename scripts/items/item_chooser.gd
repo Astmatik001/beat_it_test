@@ -2,11 +2,11 @@ class_name item_chooser
 extends Area2D
 
 
-var kick = preload("res://scenes/items/kick_item.tscn")
-var snare = preload("res://scenes/items/snare_item.tscn")
-var hi_hat = preload("res://scenes/items/hi_hat_item.tscn")
-var double = preload("res://scenes/items/double_item.tscn")
-var odd = preload("res://scenes/items/odd_item.tscn")
+var kick = preload("res://scenes/items/amulets/kick_item.tscn")
+var snare = preload("res://scenes/items/amulets/snare_item.tscn")
+var hi_hat = preload("res://scenes/items/amulets/hi_hat_item.tscn")
+var double = preload("res://scenes/items/amulets/double_item.tscn")
+var odd = preload("res://scenes/items/amulets/odd_item.tscn")
 
 var item_array = [kick, snare, hi_hat, double, odd]
 

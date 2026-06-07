@@ -20,7 +20,7 @@ func load_level(path: String):
 	var _level = load(path)
 	var level_instance = _level.instantiate()
 	add_child(level_instance)
-	level_instance.pass_items(current_hero.items)
+	level_instance.pass_items(current_hero.get_items())
 	return level_instance
 
 func create_chooser() -> void:
@@ -29,8 +29,8 @@ func create_chooser() -> void:
 	add_child(_chooser)
 	
 func _on_item_chosen(_item: item) -> void:
-	current_hero.place_item(_item)
-	current_level.pass_items(current_hero.items)
+	current_hero.try_place_item(_item)
+	current_level.pass_items(current_hero.get_items())
 	#create_chooser()
 	
 func create_hero(_hero: int) -> void:
