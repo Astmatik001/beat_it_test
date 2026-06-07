@@ -16,9 +16,10 @@ func load_level(path: String):
 	if current_level:
 		current_level.queue_free()
 	var _level = load(path)
-	var level_instance = _level.instantiate()
+	var level_instance: level = _level.instantiate()
 	if level_instance is test_item_chooser:
 		level_instance.item_chosen.connect(_on_item_chosen) 
+		level_instance.current_hero = current_hero
 	add_child(level_instance)
 	level_instance.pass_items(current_hero.get_items())
 	return level_instance

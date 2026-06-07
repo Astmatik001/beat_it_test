@@ -1,6 +1,7 @@
 class_name item_chooser
 extends Control
 
+var current_hero: hero
 func _ready() -> void:
 	generate_items()
 
@@ -27,9 +28,47 @@ func _on_item_clicked(_item: item):
 	item_chosen.emit(_item)
 	queue_free()
 
+var slot_container: HBoxContainer
+var current_displayed_item: item
+
 func _on_item_entered(_item: item):
-	#TODO show slots
-	pass
+	current_displayed_item = _item
+	if slot_container:
+		slot_container.queue_free()
+	slot_container = HBoxContainer.new()
+	slot_container.mouse_filter = Control.MOUSE_FILTER_STOP
+	slot_container.position = Vector2(-20, 50)
+	_item.add_sibling(slot_container)
+	var parts: Dictionary
+	match _item.get_type():
+		Global.item_types.HAT:
+			parts = current_hero.body[Global.body_parts.HEAD]
+		Global.item_types.AMULET:
+			parts = current_hero.body[Global.body_parts.NECK]
+		Global.item_types.WEAPON:
+			parts = current_hero.body[Global.body_parts.ARM]
+		Global.item_types.ARMOR:
+			parts = current_hero.body[Global.body_parts.BODY]
+		Global.item_types.PANTS:
+			parts = current_hero.body[Global.body_parts.LEGS]
+		Global.item_types.SHOES:
+			parts = current_hero.body[Global.body_parts.FEET]
+	for part in parts:
+		var _center_container = CenterContainer.new()
+		_center_container.size_flags_horizontal = Control.SIZE_FILL
+		slot_container.add_child(_center_container)
+		var _color_square = ColorRect.new()
+		_color_square.color = Color(0.2, 0.2, 0.2)
+		_color_square.custom_minimum_size = Vector2(30,30)
+		_center_container.add_child(_color_square)
+		var clone = part.duplicate()
+		clone.position = Vector2(0,0)
+		_center_container.add_child(clone)
+		var child_count = clone.get_child_count()
+		if child_count != 0:
+			clone.get_child(0).show_description()
+
 func _on_item_exited(_item: item):
-	#TODO hide slots
-	pass
+	if slot_container:
+		if _item == current_displayed_item:
+			slot_container.queue_free()

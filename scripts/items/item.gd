@@ -14,10 +14,17 @@ func modify_sound_count(_counts: Dictionary) -> void:
 func modify_space_count(_counts: Array[int]) -> void:
 	pass
 
+
 func _ready() -> void:
 	input_event.connect(_on_input_event)
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	
+	_label= Label.new()
+	_label.text = get_description()
+	_label.position = Vector2(-50,-70)
+	_label.visible = false
+	add_child(_label)
 
 signal ive_been_clicked(_item: item)
 signal ive_been_entered(_item: item)
@@ -30,14 +37,16 @@ func _on_input_event(viewport, event, _shape_idx):
 			viewport.set_input_as_handled()
 
 var _label: Label
+func show_description() -> void:
+	_label.visible = true
+	
+func hide_description() -> void:
+	_label.visible = false
+	
 func _on_mouse_entered() -> void:
-	get_description()
-	_label = Label.new()
-	_label.text = get_description()
-	_label.position = Vector2(-50,-80)
-	add_child(_label)
+	show_description()
 	ive_been_entered.emit(self)
 
 func _on_mouse_exited() -> void:
-	_label.queue_free()
+	hide_description()
 	ive_been_exited.emit(self)
