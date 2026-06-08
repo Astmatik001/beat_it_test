@@ -19,6 +19,7 @@ func load_level(path: String):
 	var level_instance: level = _level.instantiate()
 	if level_instance is test_item_chooser:
 		level_instance.item_chosen.connect(_on_item_chosen) 
+		level_instance.clone_clicked.connect(_on_locked_item_chosen)
 		level_instance.current_hero = current_hero
 	add_child(level_instance)
 	level_instance.pass_items(current_hero.get_items())
@@ -33,11 +34,11 @@ func _on_item_chosen(_item: item):
 	var part = current_hero.try_pick_place(_item)
 	if part:
 		current_hero.place_item(_item, part)
+		current_level.pass_items(current_hero.get_items())
 		current_level.create_chooser()
 	else:
 		current_level.lock_choise()
-		pass
-	current_level.pass_items(current_hero.get_items())
-func on_locked_item_chosen(new_item: item, old_item: item):
-		current_hero.replace_item(new_item, old_item)
-	
+
+func _on_locked_item_chosen(_item: item, part: body_part):
+		current_hero.place_item(_item, part)
+		current_level.create_chooser()

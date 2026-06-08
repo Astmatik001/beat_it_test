@@ -55,6 +55,7 @@ func show_equipped(_item: item):
 
 	var slot_container = HBoxContainer.new()
 	slot_container.alignment = BoxContainer.ALIGNMENT_CENTER
+	slot_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_slot_center_control.add_child(slot_container)
 
 	var parts: Dictionary
@@ -71,22 +72,38 @@ func show_equipped(_item: item):
 			parts = current_hero.body[Global.body_parts.LEGS]
 		Global.item_types.SHOES:
 			parts = current_hero.body[Global.body_parts.FEET]
+			
 	for part in parts:
 		var _center_container = CenterContainer.new()
 		_center_container.custom_minimum_size = Vector2(30,30)
+		_center_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		slot_container.add_child(_center_container)
+		
 		var _color_square = ColorRect.new()
 		_color_square.color = Color(0.2, 0.2, 0.2)
 		_color_square.custom_minimum_size = Vector2(30,30)
+		_color_square.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		_center_container.add_child(_color_square)
-		var clone = part.duplicate()
+		
+		var clone: body_part = part.duplicate(8)
+		clone.self_reference = part
 		clone.position = Vector2(0,0)
 		_center_container.add_child(clone)
+		
 		var child_count = clone.get_child_count()
 		if child_count != 0:
-			clone.get_child(0).show_description()
+			var child: item = clone.get_child(0)
+			child.show_description()
+			child.ive_been_clicked.connect(_on_clone_clicked)
 
 func hide_equipped(_item: item):
 	if _slot_center_control:
 		if _item == current_displayed_item:
 			_slot_center_control.queue_free()
+
+signal clone_clicked(item, body_part)
+func _on_clone_clicked(_item: item) -> void:
+	var clone: body_part = _item.get_parent()
+	locked = false
+	clone_clicked.emit(current_displayed_item, clone.self_reference)
+	
