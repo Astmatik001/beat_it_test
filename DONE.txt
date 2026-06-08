@@ -89,4 +89,6 @@
 	item descriptions on hover
 	equipped items on hover
 	bunch o new temp items
-	
+
+08.06.26
+	replacing already equipped items
