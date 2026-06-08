@@ -30,6 +30,14 @@ func create_hero(_hero: int) -> void:
 	current_hero.position = Vector2(-400, 200)
 	
 func _on_item_chosen(_item: item):
-	#current_hero.try_place_item(_item)
-	current_hero.replace_item(_item)
+	var part = current_hero.try_pick_place(_item)
+	if part:
+		current_hero.place_item(_item, part)
+		current_level.create_chooser()
+	else:
+		current_level.lock_choise()
+		pass
 	current_level.pass_items(current_hero.get_items())
+func on_locked_item_chosen(new_item: item, old_item: item):
+		current_hero.replace_item(new_item, old_item)
+	

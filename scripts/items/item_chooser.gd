@@ -20,20 +20,29 @@ func generate_items() -> void:
 signal item_chosen(item)
 
 func _on_item_clicked(_item: item):
-	_item.position = Vector2(0, 0)
-	_item.ive_been_clicked.disconnect(_on_item_clicked)
-	_item.ive_been_entered.disconnect(_on_item_entered)
-	_item.ive_been_exited.disconnect(_on_item_exited)
-	_item.get_parent().remove_child(_item)
-	slot_container.queue_free()
 	item_chosen.emit(_item)
+
+func release():
+	if _slot_center_control:
+		_slot_center_control.queue_free()
 	queue_free()
 
-var slot_container: HBoxContainer
+func lock_choise():
+	locked = true
+
 var current_displayed_item: item
 var _slot_center_control: CenterContainer
+var locked: bool = false
 
 func _on_item_entered(_item: item):
+	if not locked:
+		show_equipped(_item)
+
+func _on_item_exited(_item: item):
+	if not locked:
+		hide_equipped(_item)
+
+func show_equipped(_item: item):
 	current_displayed_item = _item
 	if _slot_center_control:
 		_slot_center_control.queue_free()
@@ -44,7 +53,7 @@ func _on_item_entered(_item: item):
 	_slot_center_control.position = Vector2(-50, 50)
 	_slot_center_control.size = Vector2(100, 50)
 
-	slot_container = HBoxContainer.new()
+	var slot_container = HBoxContainer.new()
 	slot_container.alignment = BoxContainer.ALIGNMENT_CENTER
 	_slot_center_control.add_child(slot_container)
 
@@ -77,7 +86,7 @@ func _on_item_entered(_item: item):
 		if child_count != 0:
 			clone.get_child(0).show_description()
 
-func _on_item_exited(_item: item):
-	if slot_container:
+func hide_equipped(_item: item):
+	if _slot_center_control:
 		if _item == current_displayed_item:
-			slot_container.queue_free()
+			_slot_center_control.queue_free()
